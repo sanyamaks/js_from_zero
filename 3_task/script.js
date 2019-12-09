@@ -21,17 +21,17 @@ appData = {
 function chooseExpenses() {
   for (let i = 0; i < 2; i++) {
     let expenseItem = prompt(
-      "Введите обязательную статью расходов в этом месяце",
-      ""
+        "Введите обязательную статью расходов в этом месяце",
+        ""
     );
     let priceExpenseItem = prompt("Во сколько обойдется", "");
     if (
-      typeof expenseItem === "string" &&
-      typeof expenseItem != null &&
-      typeof priceExpenseItem != null &&
-      expenseItem != "" &&
-      priceExpenseItem != "" &&
-      expenseItem.length < 50
+        typeof expenseItem === "string" &&
+        typeof expenseItem != null &&
+        typeof priceExpenseItem != null &&
+        expenseItem != "" &&
+        priceExpenseItem != "" &&
+        expenseItem.length < 50
     ) {
       console.log("done");
       appData.expenses[expenseItem] = priceExpenseItem;
