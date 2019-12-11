@@ -70,13 +70,12 @@ appData = {
     }
   },
   chooseIncome: function(callbackfn, thisArg) {
-    for (let i = 0; i < 1; i++) {
       let items = prompt(
         "Что принесет дополнительный доход? (Перечисли через запятую)",
         ""
       );
       if (typeof items !== "string" || items === "" || !items) {
-        i--;
+        console.log("Вы ввели некорректные данные или не ввели их вовсе");
       } else {
         appData.income = items.split(", ");
         appData.income.push(prompt("Может что-то еще?", ""));
@@ -87,7 +86,6 @@ appData = {
         });
         alert(messageText);
       }
-    }
   },
   showObjectProperties: function() {
     let messageText = "Наша программа включает в себя данные: \n";
