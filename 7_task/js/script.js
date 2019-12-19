@@ -79,3 +79,31 @@ function setClock(id, endtime) {
 }
 
 setClock("timer", deadline);
+
+//popup
+
+let more = document.querySelector(".more");
+let overlay = document.querySelector(".overlay");
+let closeButton = document.querySelector(".popup-close");
+
+function openPopup (){
+  overlay.style.display = "block";
+  more.classList.add("more-splash");
+  document.body.style.overflow = "hidden";
+}
+
+function closePopup(){
+  overlay.style.display = "none";
+  more.classList.remove("more-splash");
+  document.body.style.overflow = "";
+}
+
+more.addEventListener("click", openPopup);
+
+closeButton.addEventListener("click", closePopup);
+
+let descriptionButton = document.querySelectorAll(".description-btn");
+
+descriptionButton.forEach(function(index) {
+  index.addEventListener("click", openPopup);
+});
